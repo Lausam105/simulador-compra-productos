@@ -8,7 +8,7 @@ let total = 0;
 
 function eleccionProducto(){
 
-    productos = Number(prompt("Elige un producto: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir"));
+    productos = Number(prompt("Elige un producto: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
     
     while(productos != 4){
     switch(productos){
@@ -28,6 +28,12 @@ function eleccionProducto(){
         case 3:
             alert("Seleccionaste Papas fritas");
           
+            break;  
+        case 4:
+            break;
+        
+        case 5:
+            alert("Carrito vacío");
             break;    
         
             
@@ -36,7 +42,7 @@ function eleccionProducto(){
             break;
     }
     sumaProductos();
-     productos = Number(prompt("Quieres otro producto?: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir"));
+     productos = Number(prompt("Quieres otro producto?: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
      
      
      
@@ -58,6 +64,9 @@ function sumaProductos(){
      }else if(productos == 3){
         total = total + 500;
         alert("Son: $ " + total);
+     }else if(productos == 5){
+        total = total - total;
+       
      }
 }
 
