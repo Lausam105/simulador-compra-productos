@@ -3,7 +3,7 @@ const HAMBURGUESAS = 800;
 const PAPAS = 500;
 let productos = "";
 let total = 0;
-let inicio = 0;
+let inicio = 1;
 let final = 0;
 
 //funcion para comprar productos
@@ -51,7 +51,7 @@ function eleccionProducto(){
      
      
 }
-    alert("¡Gracias por tu compra!, tu total a pagar es: $" + total + " de " + inicio + " productos");   
+    alert("¡Gracias por tu compra!, tu total a pagar es: $" + total + " de " + final + " productos");   
    
 
 }
@@ -77,19 +77,19 @@ function sumaProductos(){
 //Aplicando ciclo for para un contador de productos
 
 function contador(){
-    for(let i = 0; i<= final; i++ ){
+    for(let i = inicio; i<= 1; i++ ){
      if(productos == 1){
-        inicio += 1;
-        alert("Tienes: " + inicio + " producto en el carrito");
+        final += 1;
+        alert("Tienes: " + final + " producto en el carrito");
      }else if(productos == 2){
-        inicio += 1;
-        alert("Tienes: " + inicio + " productos en el carrito");
+        final += 1;
+        alert("Tienes: " + final + " productos en el carrito");
      }else if(productos == 3){
-        inicio += 1;
-        alert("Tienes: " + inicio + " productos en el carrito");
+        final += 1;
+        alert("Tienes: " + final + " productos en el carrito");
      }else if(productos == 5){
-        inicio -= inicio;
-        
+        final -= final;
+
      }
 }
 }
