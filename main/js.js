@@ -3,6 +3,8 @@ const HAMBURGUESAS = 800;
 const PAPAS = 500;
 let productos = "";
 let total = 0;
+let inicio = 0;
+let final = 0;
 
 //funcion para comprar productos
 
@@ -10,6 +12,7 @@ function eleccionProducto(){
 
     productos = Number(prompt("Elige un producto: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
     
+    //Aplicando ciclo while y usando switch
     while(productos != 4){
     switch(productos){
 
@@ -42,6 +45,7 @@ function eleccionProducto(){
             break;
     }
     sumaProductos();
+    contador();
      productos = Number(prompt("Quieres otro producto?: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
      
      
@@ -52,7 +56,7 @@ function eleccionProducto(){
 
 }
 
-
+//Uso de condicional
 
 function sumaProductos(){
     if(productos == 1){
@@ -68,6 +72,23 @@ function sumaProductos(){
         total = total - total;
        
      }
+}
+
+//Aplicando ciclo for
+
+function contador(){
+    for(let i = 0; i<= final; i++ ){
+     if(productos == 1){
+        inicio += 1;
+        alert("Tienes: " + inicio + " producto en el carrito");
+     }else if(productos == 2){
+        inicio += 1;
+        alert("Tienes: " + inicio + " productos en el carrito");
+     }else if(productos == 3){
+        inicio += 1;
+        alert("Tienes: " + inicio + " productos en el carrito");
+}
+}
 }
 
 
