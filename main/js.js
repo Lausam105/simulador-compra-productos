@@ -51,7 +51,7 @@ function eleccionProducto(){
      
      
 }
-    alert("¡Gracias por tu compra!, tu total a pagar es: $" + total);   
+    alert("¡Gracias por tu compra!, tu total a pagar es: $" + total + " de " + inicio + " productos");   
    
 
 }
@@ -74,7 +74,7 @@ function sumaProductos(){
      }
 }
 
-//Aplicando ciclo for
+//Aplicando ciclo for para un contador de productos
 
 function contador(){
     for(let i = 0; i<= final; i++ ){
@@ -87,7 +87,10 @@ function contador(){
      }else if(productos == 3){
         inicio += 1;
         alert("Tienes: " + inicio + " productos en el carrito");
-}
+     }else if(productos == 5){
+        inicio -= inicio;
+        
+     }
 }
 }
 
