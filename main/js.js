@@ -1,10 +1,27 @@
-const PIZZAS = 1200;
-const HAMBURGUESAS = 800;
-const PAPAS = 500;
 let productos = "";
 let total = 0;
-let inicio = 1;
+let inicio = 0;
 let final = 0;
+const COMIDAS = [];
+const comidaArray = [
+{nombre: "PIZZAS", precio: 1200},
+{nombre: "HAMBURGUEZAS", precio: 800},
+{nombre: "PAPAS", precio: 500}
+]
+
+//Función de orden superior contador
+
+function contador(productos){
+    if(productos != 4){
+         return () => final += 1; //retorna una función flecha
+        }
+        
+     }
+
+
+
+let miContador = contador(productos);
+
 
 //funcion para comprar productos
 
@@ -19,18 +36,18 @@ function eleccionProducto(){
         case 1:
             
             alert("Seleccionaste Pizza");
-            
+            COMIDAS.push("pizza"); //Aplicando push a un array vacío
             break;
 
         case 2:
             
             alert("Seleccionaste Hamburguesas");
-            
+            COMIDAS.push("hamburgueza"); //Aplicando push a un array vacío
             break; 
          
         case 3:
             alert("Seleccionaste Papas fritas");
-          
+            COMIDAS.push("papas"); //Aplicando push a un array vacío
             break;  
         case 4:
             break;
@@ -45,55 +62,37 @@ function eleccionProducto(){
             break;
     }
     sumaProductos();
-    contador();
+    alert("Tienes: " + miContador() + " producto en el carrito");
      productos = Number(prompt("Quieres otro producto?: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
      
      
      
 }
-    alert("¡Gracias por tu compra!, tu total a pagar es: $" + total + " de " + final + " productos");   
-   
+    alert("¡Gracias por tu compra!, tu total a pagar es: $" + total + " de " + final + " productos: " + COMIDAS.join("\n")); 
+    
+
 
 }
+
+ 
 
 //Uso de condicional
 
 function sumaProductos(){
     if(productos == 1){
-        total = total + 1200;
+        total = total + comidaArray[0].precio; //Accediendo a un array de objetos
         alert("Son: $ " + total);
      }else if(productos == 2){
-        total = total + 800;
+        total = total + comidaArray[1].precio; //Accediendo a un array de objetos
         alert("Son: $ " + total);
      }else if(productos == 3){
-        total = total + 500;
+        total = total + comidaArray[2].precio; //Accediendo a un array de objetos
         alert("Son: $ " + total);
      }else if(productos == 5){
         total = total - total;
        
      }
 }
-
-//Aplicando ciclo for para un contador de productos
-
-function contador(){
-    for(let i = inicio; i<= 1; i++ ){
-     if(productos == 1){
-        final += 1;
-        alert("Tienes: " + final + " producto en el carrito");
-     }else if(productos == 2){
-        final += 1;
-        alert("Tienes: " + final + " productos en el carrito");
-     }else if(productos == 3){
-        final += 1;
-        alert("Tienes: " + final + " productos en el carrito");
-     }else if(productos == 5){
-        final -= final;
-
-     }
-}
-}
-
 
 
 eleccionProducto();
