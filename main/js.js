@@ -6,8 +6,19 @@ const COMIDAS = [];
 const comidaArray = [
 {nombre: "PIZZAS", precio: 1200},
 {nombre: "HAMBURGUEZAS", precio: 800},
-{nombre: "PAPAS", precio: 500}
+{nombre: "PAPAS", precio: 500},
+{nombre: "HAMBURGUEZA ESPECIAL", precio: 1000},
+{nombre: "LOMO COMÚN", precio: 1300},
+{nombre: "LOMO ESPECIAL", precio: 1800}
 ]
+
+
+//Función usando map
+
+function mostrarProductos(){
+    const productos = comidaArray.map((nom) => nom.nombre);
+    alert("Vea nuestra carta de comidas: " + productos.join("\n"));
+}
 
 //Función de orden superior contador
 
@@ -21,6 +32,9 @@ function contador(productos){
 
 
 let miContador = contador(productos);
+
+alert("Bienvenido a nuestro sitio de comidas");
+mostrarProductos();
 
 
 //funcion para comprar productos
