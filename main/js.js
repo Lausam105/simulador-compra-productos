@@ -26,8 +26,12 @@ function contador(productos){
     if(productos != 4){
          return () => final += 1; //retorna una función flecha
         }
-        
      }
+
+function restarContador(){
+    final = final - final;
+    COMIDAS.length = 0;
+}     
 
 
 
@@ -44,30 +48,35 @@ function eleccionProducto(){
     productos = Number(prompt("Elige un producto: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
     
     //Aplicando ciclo while y usando switch
-    while(productos != 4){
+    while((productos != 4)){
     switch(productos){
 
         case 1:
             
             alert("Seleccionaste Pizza");
             COMIDAS.push("pizza"); //Aplicando push a un array vacío
+            alert("Tienes: " + miContador() + " productos en el carrito");
             break;
 
         case 2:
             
             alert("Seleccionaste Hamburguesas");
             COMIDAS.push("hamburgueza"); //Aplicando push a un array vacío
+            alert("Tienes: " + miContador() + " productos en el carrito");
             break; 
          
         case 3:
             alert("Seleccionaste Papas fritas");
             COMIDAS.push("papas"); //Aplicando push a un array vacío
+            alert("Tienes: " + miContador() + " productos en el carrito");
             break;  
         case 4:
             break;
         
         case 5:
             alert("Carrito vacío");
+            restarContador();
+            alert("Tienes: " + final + " productos en el carrito");
             break;    
         
             
@@ -76,7 +85,7 @@ function eleccionProducto(){
             break;
     }
     sumaProductos();
-    alert("Tienes: " + miContador() + " producto en el carrito");
+    
      productos = Number(prompt("Quieres otro producto?: 1-Pizzas $1200; 2-Hamburguesas $800; 3-Papas Fritas $500; 4-Salir; 5-Cancelar carrito"));
      
      
